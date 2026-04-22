@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Google Sans Flex", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.root-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #155dfc;
+  padding: 4rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  
+  p {
+    font-size: 4rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: -0.025em;
+    will-change: transform, opacity;
+  }
+
+  .links {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    a {
+      font-weight: 500;
+      color: white;
+      font-size: 2rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
