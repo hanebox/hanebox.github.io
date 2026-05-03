@@ -1,40 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hanebox - a software eng.</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
+    <title>hanebox - software dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
   </head>
   <body>
     <main class="root-container">
       <div>
-        <p class="main-text">Hello, I'm han and I make software</p>
-        <div class="links">
-          <a href="https://github.com/hanebox" target="_blank">Github</a>
-          <a href="https://x.com/hanebox" target="_blank">Twitter</a>
-        </div>
+        <p class="main-text">
+          Hello, I'm <span>Han</span> and I brew <span>software</span>
+          and am currently <span>open to projects or work</span><br /> In my free time I love to work on
+          <span
+            >[<a href="https://github.com/hanebox/ekphos" target="_blank"
+              >Ekphos</a
+            >]</span
+          > <br />You can find me on
+          <span>
+            <a href="https://github.com/hanebox" target="_blank">Github</a>
+          </span>
+          or
+          <span>
+            <a href="https://x.com/hanebox" target="_blank">X</a>
+          </span>
+        </p>
       </div>
     </main>
-    <script>
-
-      document.addEventListener("DOMContentLoaded", async () => {
-        const mainText = document.querySelector(".main-text")
-        const { chars } = anime.splitText(mainText, { words: false, chars: true });
-
-        anime.animate(chars, {
-          y: [20, 0],
-          opacity: [0, 1],
-          rotate: [8, 0],
-          delay: anime.stagger(50),
-          ease: 'out(4)',
-          duration: 300,
-        })
-      })
-    </script>
   </body>
 </html>

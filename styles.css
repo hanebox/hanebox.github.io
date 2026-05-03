@@ -10,26 +10,32 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .root-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  background-color: #155dfc;
+  background-color: oklch(.216 .006 56.043);
   padding: 4rem;
 
   @media (max-width: 768px) {
     padding: 1.5rem;
   }
 
-  
   p {
-    font-size: 4rem;
-    font-weight: 600;
-    color: white;
-    letter-spacing: -0.025em;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.4;
     will-change: transform, opacity;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    span {
+      color: white;
+    }
   }
 
   .links {
@@ -37,19 +43,14 @@ body {
     display: flex;
     flex-direction: row;
     gap: 16px;
-    a {
-      font-weight: 500;
-      color: white;
-      font-size: 2rem;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
   }
 }
-
 
 a {
   color: inherit;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
