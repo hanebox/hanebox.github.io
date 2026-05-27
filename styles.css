@@ -43,6 +43,8 @@ a {
 
 .page {
   width: 100%;
+  max-width: 40rem;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: clamp(2rem, 5vh, 3.25rem);
@@ -61,6 +63,7 @@ a {
   width: 42px;
   height: 42px;
   border-radius: 50%;
+  margin-bottom: clamp(0.5rem, 2vh, 1rem);
 }
 
 .intro {
@@ -101,6 +104,14 @@ a {
 .links .dot {
   margin: 0 0.55em;
   color: rgba(255, 255, 255, 0.25);
+}
+
+.section-label {
+  display: block;
+  padding-inline: var(--pad);
+  font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.1rem);
+  color: rgba(227, 223, 213, 0.4);
+  margin-bottom: clamp(0.6rem, 1.5vh, 1rem);
 }
 
 .gallery {
