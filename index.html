@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hanebox - software dev</title>
+    <meta
+      name="description"
+      content="Han, software developer. I brew software and build tools like Pivy and Suiperpower. Open to projects and work."
+    />
+    <meta name="theme-color" content="#1a1714" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,28 +17,108 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <main class="root-container">
-      <div>
-        <p class="main-text">
-          Hello, I'm <span>Han</span> and I brew <span>software</span>
-          and am currently <span>open to projects or work</span>. In my free time I love to work on
-          <span
-            >[<a href="https://github.com/hanebox/ekphos" target="_blank"
-              >Ekphos</a
-            >]</span
-          >. You can find me on
-          <span>
-            <a href="https://github.com/hanebox" target="_blank">Github</a>
-          </span>
-          or
-          <span>
-            <a href="https://x.com/hanebox" target="_blank">X</a>
-          </span>.
-          Say something to <span><a href="mailto:hihanebox@gmail.com" target="_blank">hihanebox@gmail.com</a></span>
+    <main class="page">
+      <header class="hero">
+        <canvas
+          id="mark"
+          class="mark"
+          width="96"
+          height="96"
+          aria-hidden="true"
+        ></canvas>
+        <p class="intro">
+          I'm <span>Han</span>, and I brew <span>software</span>.<br />
+          Currently <span>open to projects &amp; work</span>.<br /> Building
+          <a
+            href="https://github.com/hanebox/ekphos"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Ekphos</a
+          >
+          on the side.
         </p>
-      </div>
+        <p class="links">
+          <a
+            href="https://github.com/hanebox"
+            target="_blank"
+            rel="noopener noreferrer"
+            >github</a
+          >
+          <span class="dot" aria-hidden="true">·</span>
+          <a
+            href="https://x.com/hanebox"
+            target="_blank"
+            rel="noopener noreferrer"
+            >x</a
+          >
+          <span class="dot" aria-hidden="true">·</span>
+          <a href="mailto:hihanebox@gmail.com">hihanebox@gmail.com</a>
+        </p>
+      </header>
+
+      <section class="projects">
+        <div class="gallery">
+          <a
+            class="card card--pivy"
+            href="https://pivy.me"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="card-title">Pivy</span>
+            <img
+              class="card-img"
+              src="assets/projects/pivy.webp"
+              alt="Pivy, get paid and stay private"
+              loading="lazy"
+            />
+            <span class="card-cat">Privacy · Payments</span>
+            <svg
+              class="card-arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+          <a
+            class="card card--suiper"
+            href="https://suiperpower.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="card-title">Suiperpower</span>
+            <img
+              class="card-img"
+              src="assets/projects/suiperpower.webp"
+              alt="Suiperpower, build something meaningful on Sui"
+              loading="lazy"
+            />
+            <span class="card-cat">Developer Tooling</span>
+            <svg
+              class="card-arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+        </div>
+      </section>
     </main>
   </body>
 </html>
