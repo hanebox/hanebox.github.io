@@ -93,7 +93,7 @@ a {
 
 .name {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .intro {
@@ -174,7 +174,7 @@ a {
 }
 
 .row-title {
-  font-weight: 600;
+  font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -201,6 +201,57 @@ a {
   color: var(--faint);
   margin-top: 0.75rem;
   text-wrap: pretty;
+}
+
+/* Experience */
+
+.timeline {
+  list-style: none;
+}
+
+.tl-item {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0.875rem;
+  padding-block: 0.5rem;
+}
+
+.tl-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 36px;
+  bottom: -12px;
+  width: 1px;
+  background: var(--border);
+}
+
+.tl-year {
+  flex: none;
+  width: 2.5rem;
+  font-size: 0.8125rem;
+  color: var(--faint);
+}
+
+.tl-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.tl-title {
+  font-weight: 500;
+  text-wrap: balance;
+}
+
+.tl-co {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Playlist pills */
