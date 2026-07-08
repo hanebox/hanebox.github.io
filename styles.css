@@ -9,7 +9,7 @@
   --text: #141414;
   --muted: #6b6b6b;
   --faint: #a3a3a3;
-  --hover: rgba(0,0,0,0.1);
+  --hover: rgba(0,0,0,0.05);
   --border: #ebebeb;
   --border-hover: #d9d9d9;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -157,13 +157,8 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 6px;
-  object-fit: cover;
+  object-fit: contain;
   transition: filter 200ms ease;
-}
-
-.row-image--wide {
-  width: 59px;
-  aspect-ratio: 4 / 3;
 }
 
 .row-meta {
