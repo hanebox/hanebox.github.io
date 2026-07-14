@@ -24,7 +24,7 @@ body {
   font-size: 0.9375rem;
   font-weight: 500;
   line-height: 1.6;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg);
@@ -298,6 +298,42 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Quote */
+
+.quote-block {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.quote-mark {
+  width: 16px;
+  height: 16px;
+  color: var(--border-hover);
+}
+
+.quote-text {
+  color: var(--muted);
+  font-style: italic;
+  text-wrap: pretty;
+}
+
+.quote-author {
+  font-size: 0.8125rem;
+  color: var(--faint);
+}
+
+.quote-author::before {
+  content: "— ";
 }
 
 /* Hover (pointer devices only) */
