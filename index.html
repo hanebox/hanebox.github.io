@@ -1,25 +1,8 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>hanebox - software engineer</title>
-        <meta
-            name="description"
-            content="Han, software developer. I brew software and build tools like Pivy and Suiperpower. Open to projects and work."
-        />
-        <meta name="theme-color" content="#ffffff" />
-        <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <main class="page">
+---
+layout: default
+title: Software Engineer
+description: Han is a software engineer building tools like Pivy and Suiperpower. Open to projects and work.
+---
             <header class="hero">
                 <h1 class="name">Han</h1>
                 <p class="intro">
@@ -55,6 +38,7 @@
                         rel="noopener noreferrer"
                         >LinkedIn</a
                     >
+                    <a href="{{ '/blog/' | relative_url }}">Blog</a>
                     <a href="mailto:hihanebox@gmail.com">Email</a>
                 </nav>
                 <div class="quote-block">
@@ -91,7 +75,7 @@
                         >
                             <img
                                 class="row-image"
-                                src="assets/projects/pivy-v2-glass.webp"
+                                src="{{ '/assets/projects/pivy-v2-glass.webp' | relative_url }}"
                                 alt="Pivy, get paid and stay private"
                                 loading="lazy"
                             />
@@ -123,7 +107,7 @@
                         >
                             <img
                                 class="row-image"
-                                src="assets/projects/suiperpower-icon.webp"
+                                src="{{ '/assets/projects/suiperpower-icon.webp' | relative_url }}"
                                 alt="Suiperpower, build something meaningful on Sui"
                                 loading="lazy"
                             />
@@ -197,7 +181,7 @@
                         >
                             <img
                                 class="pill-image"
-                                src="assets/playlist/music-underscores.jpg"
+                                src="{{ '/assets/playlist/music-underscores.jpg' | relative_url }}"
                                 alt="Cover art for Music by underscores"
                                 width="300"
                                 height="300"
@@ -216,7 +200,7 @@
                         >
                             <img
                                 class="pill-image"
-                                src="assets/playlist/paw-paw-illit.jpg"
+                                src="{{ '/assets/playlist/paw-paw-illit.jpg' | relative_url }}"
                                 alt="Cover art for paw, paw! by ILLIT"
                                 width="300"
                                 height="300"
@@ -235,7 +219,7 @@
                         >
                             <img
                                 class="pill-image"
-                                src="assets/playlist/anesthesia-aries.jpg"
+                                src="{{ '/assets/playlist/anesthesia-aries.jpg' | relative_url }}"
                                 alt="Cover art for ANESTHESIA by ARIES"
                                 width="300"
                                 height="300"
@@ -254,7 +238,7 @@
                         >
                             <img
                                 class="pill-image"
-                                src="assets/playlist/headlights-in-color.jpg"
+                                src="{{ '/assets/playlist/headlights-in-color.jpg' | relative_url }}"
                                 alt="Cover art for Headlights by In Color"
                                 width="300"
                                 height="300"
@@ -273,7 +257,7 @@
                         >
                             <img
                                 class="pill-image"
-                                src="assets/playlist/when-my-wings-are-cut-off-daine.jpg"
+                                src="{{ '/assets/playlist/when-my-wings-are-cut-off-daine.jpg' | relative_url }}"
                                 alt="Cover art for when my wings are cut off by daine"
                                 width="300"
                                 height="300"
@@ -294,7 +278,7 @@
                         >
                             <img
                                 class="pill-image"
-                                src="assets/playlist/tailor-swif-asap-rocky.jpg"
+                                src="{{ '/assets/playlist/tailor-swif-asap-rocky.jpg' | relative_url }}"
                                 alt="Cover art for Tailor Swif by A$AP Rocky"
                                 width="300"
                                 height="300"
@@ -313,7 +297,7 @@
                         >
                             <img
                                 class="pill-image"
-                                src="assets/playlist/lithonia-childish-gambino.jpg"
+                                src="{{ '/assets/playlist/lithonia-childish-gambino.jpg' | relative_url }}"
                                 alt="Cover art for Lithonia by Childish Gambino"
                                 width="300"
                                 height="300"
@@ -325,6 +309,3 @@
                     </li>
                 </ul>
             </section>
-        </main>
-    </body>
-</html>

@@ -1,0 +1,22 @@
+title: Han
+description: Han is a software engineer who builds thoughtful tools and writes about software.
+url: "https://hanebox.github.io"
+baseurl: ""
+lang: en
+timezone: Asia/Jakarta
+
+permalink: /blog/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+
+exclude:
+  - .bundle
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

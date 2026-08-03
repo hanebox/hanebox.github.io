@@ -1,0 +1,46 @@
+---
+layout: default
+title: Blog
+description: Notes on software, tools, and things I learn along the way.
+permalink: /blog/
+page_class: writing-page
+---
+<nav class="site-nav" aria-label="Primary navigation">
+    <a class="site-name" href="{{ '/' | relative_url }}">Han</a>
+    <span class="site-links">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/blog/' | relative_url }}" aria-current="page">Blog</a>
+    </span>
+</nav>
+
+<header class="blog-header">
+    <h1>Blog</h1>
+    <p>{{ page.description }}</p>
+</header>
+
+<section aria-label="Blog posts">
+    {% if site.posts.size > 0 %}
+    <ol class="post-list">
+        {% for post in site.posts %}
+        <li>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+                <span class="post-link-copy">
+                    <span class="post-link-title">{{ post.title }}</span>
+                    {% if post.description %}
+                    <span class="post-link-description">
+                        {{ post.description }}
+                    </span>
+                    {% endif %}
+                </span>
+                <time datetime="{{ post.date | date_to_xmlschema }}">
+                    {{ post.date | date: "%b %-d, %Y" }}
+                </time>
+            </a>
+        </li>
+        {% endfor %}
+    </ol>
+    {% else %}
+    <p class="empty-state">No posts yet.</p>
+    {% endif %}
+</section>
+
