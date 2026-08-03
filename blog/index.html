@@ -25,7 +25,22 @@ page_class: writing-page
         <li>
             <a class="post-link" href="{{ post.url | relative_url }}">
                 <span class="post-link-copy">
-                    <span class="post-link-title">{{ post.title }}</span>
+                    <span class="post-link-title">
+                        {{ post.title }}
+                        <svg
+                            class="post-link-arrow"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <line x1="7" y1="17" x2="17" y2="7" />
+                            <polyline points="7 7 17 7 17 17" />
+                        </svg>
+                    </span>
                     {% if post.description %}
                     <span class="post-link-description">
                         {{ post.description }}
@@ -43,4 +58,3 @@ page_class: writing-page
     <p class="empty-state">No posts yet.</p>
     {% endif %}
 </section>
-
