@@ -12,6 +12,7 @@
   --hover: rgba(0,0,0,0.05);
   --border: #ebebeb;
   --border-hover: #d9d9d9;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 html {
@@ -106,6 +107,69 @@ a {
   font-weight: 500;
   color: var(--faint);
   margin-bottom: 0.5rem;
+}
+
+.project-list {
+  list-style: none;
+}
+
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-inline: -0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 10px;
+  transition: background-color 150ms ease, transform 160ms var(--ease-out);
+}
+
+.project-row:active {
+  transform: scale(0.99);
+}
+
+.project-image {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.project-image--ekphos,
+.project-image--notem {
+  padding: 0.25rem;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.project-title {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-sub {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-arrow {
+  flex: none;
+  width: 15px;
+  height: 15px;
+  color: var(--faint);
+  font-size: 1rem;
+  line-height: 0.9;
+  transition: transform 200ms var(--ease-out), color 150ms ease;
 }
 
 /* Experience */
@@ -437,6 +501,15 @@ a {
   }
 
   .links a:hover {
+    color: var(--text);
+  }
+
+  .project-row:hover {
+    background-color: var(--hover);
+  }
+
+  .project-row:hover .project-arrow {
+    transform: translate(1px, -1px);
     color: var(--text);
   }
 
