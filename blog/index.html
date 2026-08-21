@@ -36,11 +36,6 @@ page_class: writing-page
                             <polyline points="7 7 17 7 17 17" />
                         </svg>
                     </span>
-                    {% if post.description %}
-                    <span class="post-link-description">
-                        {{ post.description }}
-                    </span>
-                    {% endif %}
                 </span>
                 <time datetime="{{ post.date | date_to_xmlschema }}">
                     {{ post.date | date: "%b %-d, %Y" }}

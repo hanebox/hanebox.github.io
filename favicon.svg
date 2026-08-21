@@ -1,50 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="hanebox mark">
-  <defs>
-    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f2f2f2"/>
-      <stop offset="0.5" stop-color="#8f8f8f"/>
-      <stop offset="1" stop-color="#1d1d1d"/>
-    </linearGradient>
-
-    <radialGradient id="m1" cx="0.24" cy="0.18" r="0.7">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="m2" cx="0.82" cy="0.86" r="0.78">
-      <stop offset="0" stop-color="#000000" stop-opacity="0.8"/>
-      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="m3" cx="0.86" cy="0.2" r="0.55">
-      <stop offset="0" stop-color="#c4c4c4" stop-opacity="0.75"/>
-      <stop offset="1" stop-color="#c4c4c4" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="m4" cx="0.15" cy="0.78" r="0.6">
-      <stop offset="0" stop-color="#5a5a5a" stop-opacity="0.6"/>
-      <stop offset="1" stop-color="#5a5a5a" stop-opacity="0"/>
-    </radialGradient>
-
-    <filter id="grain" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"/>
-      <feColorMatrix in="noise" type="matrix"
-        values="1 0 0 0 0
-                1 0 0 0 0
-                1 0 0 0 0
-                0 0 0 0 1" result="gray"/>
-    </filter>
-
-    <clipPath id="clip">
-      <circle cx="50" cy="50" r="49"/>
-    </clipPath>
-  </defs>
-
-  <g clip-path="url(#clip)">
-    <rect width="100" height="100" fill="url(#base)"/>
-    <rect width="100" height="100" fill="url(#m1)"/>
-    <rect width="100" height="100" fill="url(#m4)"/>
-    <rect width="100" height="100" fill="url(#m3)"/>
-    <rect width="100" height="100" fill="url(#m2)"/>
-    <rect width="100" height="100" filter="url(#grain)" opacity="0.2" style="mix-blend-mode:overlay"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Han">
+  <circle cx="24" cy="24" r="23.5" fill="#ffffff"/>
+  <g fill="none" stroke="#141414" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" transform="translate(24 24.6) scale(1.16) translate(-23.8 -24)">
+    <path fill="#141414" stroke="none" d="M 7.85 18.62 Q 8.83 15.41 10.64 12.69 Q 12.46 9.97 15.24 8.33 Q 18.02 6.69 21.36 6.52 Q 24.69 6.34 27.7 7.24 Q 30.72 8.15 33.26 10.16 Q 35.81 12.17 37.32 14.46 Q 38.83 16.74 40.16 20 Q 41.49 23.26 40.49 19.15 Q 39.49 15.04 37.89 14.71 Q 36.29 14.38 34.69 14.05 Q 33.09 13.73 31.49 14.5 Q 29.89 15.27 28.29 14.4 Q 26.69 13.53 25.09 14.43 Q 23.49 15.32 21.89 14.32 Q 20.29 13.31 18.69 14.1 Q 17.09 14.89 15.49 14.68 Q 13.89 14.46 12.29 14.36 Q 10.69 14.26 8.78 18.05 Q 6.87 21.84 7.85 18.62 Z"/>
+  <path class="line" d="M 7.72 22.79 Q 9.84 16.06 12.24 13.61 Q 14.64 11.15 18.01 10.02 Q 21.38 8.89 24.6 8.57 Q 27.82 8.25 31.13 9.92 Q 34.45 11.58 36.93 14.24 Q 39.41 16.9 39.97 21.01 Q 40.54 25.11 39.35 28.36 Q 38.17 31.61 35.9 34.13 Q 33.63 36.66 30.83 38.53 Q 28.04 40.4 24.36 40.77 Q 20.68 41.15 17.33 39.83 Q 13.98 38.51 11.76 35.98 Q 9.55 33.46 8.45 29.89 Q 7.35 26.33 7.82 22.71 Q 8.29 19.09 10.31 15.97 L 12.33 12.86"/>
+  <path class="line" d="M 13.11 19.77 Q 15.4 18.98 16.72 18.96 Q 18.05 18.94 19.09 19.16 L 20.13 19.37"/>
+  <path class="line" d="M 27.75 19.32 Q 30.02 19.07 31.16 19.17 Q 32.31 19.26 33.43 19.57 L 34.56 19.88"/>
+  <path class="line" d="M 22.35 28.45 Q 22.18 29.67 21.51 30.82 Q 20.83 31.98 19.42 32.53 Q 18 33.09 16.71 32.78 Q 15.42 32.47 14.42 31.87 Q 13.41 31.28 12.48 30.28 Q 11.55 29.28 11.18 28.1 Q 10.8 26.92 11.18 25.65 Q 11.55 24.37 12.47 23.36 Q 13.39 22.35 14.71 21.83 Q 16.04 21.32 17.3 21.46 Q 18.56 21.6 19.59 22.17 Q 20.63 22.74 21.44 23.94 Q 22.24 25.13 22.38 26.26 Q 22.52 27.38 22.37 28.82 Q 22.22 30.25 22.36 28.75 Q 22.51 27.24 22.35 28.45 Z"/>
+  <path class="line" d="M 36.8 28.36 Q 36.49 29.58 35.51 30.71 Q 34.54 31.84 33.35 32.19 Q 32.16 32.54 30.93 32.5 Q 29.7 32.45 28.59 31.9 Q 27.48 31.35 26.51 30.46 Q 25.54 29.58 25.27 28.19 Q 24.99 26.8 25.51 25.67 Q 26.03 24.54 26.92 23.51 Q 27.81 22.47 29.03 21.95 Q 30.26 21.43 31.38 21.51 Q 32.49 21.59 33.67 22.19 Q 34.85 22.8 35.56 23.87 Q 36.26 24.94 36.65 26.16 Q 37.03 27.38 36.65 28.8 Q 36.26 30.22 36.69 28.68 Q 37.12 27.14 36.8 28.36 Z"/>
+  <path class="line" d="M 22.84 26.05 Q 24.06 25.33 24.67 25.54 L 25.29 25.76"/>
+  <path class="line" d="M 11.08 26.5 Q 9.75 26.01 9.02 25.52 L 8.29 25.03 M 36.9 26.46 Q 38.46 25.92 39.08 25.42 L 39.7 24.91"/>
+    <circle cx="17" cy="27.5" r="1.15" fill="#141414" stroke="none"/>
+    <circle cx="31" cy="27.4" r="1.15" fill="#141414" stroke="none"/>
+  <path class="line" d="M 23.66 29.3 Q 23.36 30.65 23.71 31.17 Q 24.07 31.7 24.67 31.77 L 25.26 31.84"/>
+  <path class="line" d="M 20.18 35.46 Q 21.96 36.53 23.26 36.58 Q 24.56 36.63 25.56 36.39 Q 26.55 36.15 27.3 35.65 L 28.04 35.15"/>
   </g>
-
-  <circle cx="50" cy="50" r="49" fill="none" stroke="#000000" stroke-opacity="0.18" stroke-width="1"/>
 </svg>

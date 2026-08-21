@@ -67,6 +67,28 @@ a {
   gap: 0.75rem;
 }
 
+.avatar {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 0.25rem;
+}
+
+.avatar-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.avatar-hair {
+  fill: currentColor;
+}
+
+.avatar-dot {
+  fill: currentColor;
+}
+
 .name {
   font-size: 1rem;
   font-weight: 500;
@@ -235,7 +257,6 @@ a {
 /* Quote */
 
 .quote-block {
-  margin-top: 0.75rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -244,7 +265,11 @@ a {
 .quote {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.375rem;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.04);
 }
 
 .quote-mark {
@@ -313,11 +338,6 @@ a {
   text-wrap: balance;
 }
 
-.post-description {
-  color: var(--muted);
-  text-wrap: pretty;
-}
-
 .post-list {
   list-style: none;
 }
@@ -357,12 +377,6 @@ a {
   height: 13px;
   color: var(--faint);
   opacity: 0;
-}
-
-.post-link-description {
-  color: var(--muted);
-  font-size: 0.8125rem;
-  text-wrap: pretty;
 }
 
 .post-link time,
