@@ -363,23 +363,44 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                     ].map((slug) => "/assets/previews/" + slug + ".m4a");
                     let selectedIndex = 0;
                     let loadedIndex = -1;
+                    let fadeTimer = null;
                     const audio = new Audio();
                     audio.preload = "none";
+
+                    function clearFade() {
+                        if (fadeTimer) {
+                            clearTimeout(fadeTimer);
+                            fadeTimer = null;
+                        }
+                    }
+
+                    function zeroBar(el) {
+                        el.classList.remove("is-ended");
+                        el.classList.add("is-resetting");
+                        el.style.setProperty("--progress", "0");
+                        void el.offsetWidth;
+                        el.classList.remove("is-resetting");
+                    }
+
+                    function resetProgress() {
+                        if (loadedIndex < 0) return;
+                        clearFade();
+                        zeroBar(pills[loadedIndex]);
+                    }
 
                     function loadSelected(play) {
                         if (loadedIndex === selectedIndex && audio.src) {
                             if (play) audio.play();
                             return;
-                        }                        if (loadedIndex > -1) {
-                            pills[loadedIndex].style.setProperty(
-                                "--progress",
-                                "0"
-                            );
+                        }
+                        if (loadedIndex > -1) {
+                            resetProgress();
                         }
                         audio.src = previews[selectedIndex];
                         audio.volume = 1;
                         audio.playbackRate = 1;
                         loadedIndex = selectedIndex;
+                        zeroBar(pills[loadedIndex]);
                         const request = audio.play();
                         if (request && request.catch) {
                             request.catch(() => {});
@@ -399,7 +420,14 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                         else audio.pause();
                     });
 
-                    audio.addEventListener("play", () => setPlaying(true));
+                    audio.addEventListener("play", () => {
+                        const el = pills[loadedIndex];
+                        if (el && el.classList.contains("is-ended")) {
+                            clearFade();
+                            zeroBar(el);
+                        }
+                        setPlaying(true);
+                    });
                     audio.addEventListener("pause", () =>
                         setPlaying(false)
                     );
@@ -412,11 +440,14 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                         );
                     });
                     audio.addEventListener("ended", () => {
-                        if (loadedIndex > -1) {
-                            pills[loadedIndex].style.setProperty(
-                                "--progress",
-                                "0"
-                            );
+                        clearFade();
+                        const el = pills[loadedIndex];
+                        if (el) {
+                            el.classList.add("is-ended");
+                            fadeTimer = setTimeout(() => {
+                                fadeTimer = null;
+                                zeroBar(el);
+                            }, 700);
                         }
                         setPlaying(false);
                     });
@@ -544,6 +575,7 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                         selectedIndex = next;
                         layout();
                         const resume = !audio.paused;
+                        resetProgress();
                         loadedIndex = -1;
                         if (resume) loadSelected(true);
                     });

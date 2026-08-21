@@ -357,10 +357,21 @@ a {
   transform: scaleX(var(--progress, 0));
   transform-origin: left center;
   pointer-events: none;
-  transition: transform 250ms linear;
+  transition:
+    transform 250ms linear,
+    opacity 600ms ease;
+}
+
+.deck .pill.is-resetting::before {
+  transition: none;
+}
+
+.deck .pill.is-ended::before {
+  opacity: 0;
 }
 
 .pill-image {
+  position: relative;
   flex: none;
   width: 24px;
   height: 24px;
@@ -369,6 +380,7 @@ a {
 }
 
 .pill-title {
+  position: relative;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -378,6 +390,7 @@ a {
 }
 
 .pill-sub {
+  position: relative;
   min-width: 0;
   font-size: 0.8125rem;
   color: var(--muted);
