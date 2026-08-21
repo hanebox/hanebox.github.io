@@ -56,9 +56,11 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                 <h1 class="name">Han</h1>
                 <p class="intro">
                     Software engineer. I mostly build with
-                    <span class="em">TypeScript</span> and a tiny bit of
-                    <span class="em">Rust</span>. Currently
-                    <span class="em">open to projects &amp; work</span>.
+                    <span class="em ts">TypeScript</span> and a tiny bit of
+                    <span class="em rs">Rust</span>. Currently
+                    <a class="em open" href="mailto:hihanebox@gmail.com"
+                        >open to projects &amp; work</a
+                    >.
                 </p>
                 <nav class="links" aria-label="Links">
                     <a
@@ -90,7 +92,7 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                     <li>
                         <a
                             class="project-row"
-                            href="https://ekphos.netlify.app"
+                            href="https://github.com/hanebox/ekphos"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -155,13 +157,22 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                             <span class="tl-co">Netra Music</span>
                         </span>
                     </li>
+                    <li class="tl-item">
+                        <span class="tl-year">2022</span>
+                        <span class="tl-meta">
+                            <span class="tl-title"
+                                >A lost kid without purpose</span
+                            >
+                            <span class="tl-co">Real Life Inc.</span>
+                        </span>
+                    </li>
                 </ol>
             </section>
 
             <section class="section">
                 <h2 class="section-label">Playlist</h2>
-                <ul class="pills">
-                    <li>
+                <div class="deck-card">
+                    <div class="deck">
                         <a
                             class="pill"
                             href="https://open.spotify.com/track/6gPbjxlebqkFyCaLY4SRVm"
@@ -179,8 +190,6 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                             <span class="pill-title">Music</span>
                             <span class="pill-sub">underscores</span>
                         </a>
-                    </li>
-                    <li>
                         <a
                             class="pill"
                             href="https://open.spotify.com/track/16VomaSiUmaRdubMxh4FyY"
@@ -198,8 +207,6 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                             <span class="pill-title">paw, paw!</span>
                             <span class="pill-sub">ILLIT</span>
                         </a>
-                    </li>
-                    <li>
                         <a
                             class="pill"
                             href="https://open.spotify.com/track/1FNRrP6GaSL215RvOCQNCw"
@@ -217,8 +224,6 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                             <span class="pill-title">ANESTHESIA</span>
                             <span class="pill-sub">ARIES</span>
                         </a>
-                    </li>
-                    <li>
                         <a
                             class="pill"
                             href="https://open.spotify.com/track/4sO4TFR2V8zXmuEOeJlt0e"
@@ -236,8 +241,6 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                             <span class="pill-title">Headlights</span>
                             <span class="pill-sub">In Color</span>
                         </a>
-                    </li>
-                    <li>
                         <a
                             class="pill"
                             href="https://open.spotify.com/track/4FLzbyklBSxPgU1PW82UUj"
@@ -257,8 +260,6 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                             >
                             <span class="pill-sub">daine</span>
                         </a>
-                    </li>
-                    <li>
                         <a
                             class="pill"
                             href="https://open.spotify.com/track/5xMjhZKSo8yh5r9b5vrYRr"
@@ -276,8 +277,6 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                             <span class="pill-title">Tailor Swif</span>
                             <span class="pill-sub">A$AP Rocky</span>
                         </a>
-                    </li>
-                    <li>
                         <a
                             class="pill"
                             href="https://open.spotify.com/track/451PPqRJGkQQKoK0Tqgnmz"
@@ -295,9 +294,264 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
                             <span class="pill-title">Lithonia</span>
                             <span class="pill-sub">Childish Gambino</span>
                         </a>
-                    </li>
-                </ul>
+                    </div>
+                        <div class="controls">
+                            <button
+                                class="player-btn"
+                                id="play-btn"
+                                type="button"
+                                aria-label="Play preview"
+                            >
+                                <svg
+                                    class="icon-play"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M8 5.14v13.72c0 .8.87 1.3 1.56.88l10.54-6.86a1.05 1.05 0 0 0 0-1.76L9.56 4.26A1.04 1.04 0 0 0 8 5.14z"
+                                    />
+                                </svg>
+                                <svg
+                                    class="icon-pause"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <rect x="6" y="5" width="4" height="14" rx="1" />
+                                    <rect x="14" y="5" width="4" height="14" rx="1" />
+                                </svg>
+                            </button>
+                            <button class="shuffle-btn" type="button">
+                            <svg
+                                class="shuffle-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <polyline points="16 3 21 3 21 8"></polyline>
+                                <line x1="4" y1="20" x2="21" y2="3"></line>
+                                <polyline points="21 16 21 21 16 21"></polyline>
+                                <line x1="15" y1="15" x2="21" y2="21"></line>
+                                <line x1="4" y1="4" x2="9" y2="9"></line>
+                            </svg>
+                            Shuffle
+                        </button>
+                    </div>
+                </div>
             </section>
+
+            <script>
+                (() => {
+                    const deck = document.querySelector(".deck");
+                    const button = document.querySelector(".shuffle-btn");
+                    const playBtn = document.getElementById("play-btn");
+                    if (!deck || !button || !playBtn) return;
+                    const pills = [...deck.querySelectorAll(".pill")];
+                    const previews = [
+                        "music-underscores",
+                        "paw-paw-illit",
+                        "anesthesia-aries",
+                        "headlights-in-color",
+                        "when-my-wings-are-cut-off-daine",
+                        "tailor-swif-asap-rocky",
+                        "lithonia-childish-gambino"
+                    ].map((slug) => "/assets/previews/" + slug + ".m4a");
+                    let selectedIndex = 0;
+                    let loadedIndex = -1;
+                    const audio = new Audio();
+                    audio.preload = "none";
+
+                    function loadSelected(play) {
+                        if (loadedIndex === selectedIndex && audio.src) {
+                            if (play) audio.play();
+                            return;
+                        }                        if (loadedIndex > -1) {
+                            pills[loadedIndex].style.setProperty(
+                                "--progress",
+                                "0"
+                            );
+                        }
+                        audio.src = previews[selectedIndex];
+                        audio.volume = 1;
+                        audio.playbackRate = 1;
+                        loadedIndex = selectedIndex;
+                        const request = audio.play();
+                        if (request && request.catch) {
+                            request.catch(() => {});
+                        }
+                    }
+
+                    function setPlaying(on) {
+                        playBtn.classList.toggle("is-playing", on);
+                        playBtn.setAttribute(
+                            "aria-label",
+                            on ? "Pause preview" : "Play preview"
+                        );
+                    }
+
+                    playBtn.addEventListener("click", () => {
+                        if (audio.paused) loadSelected(true);
+                        else audio.pause();
+                    });
+
+                    audio.addEventListener("play", () => setPlaying(true));
+                    audio.addEventListener("pause", () =>
+                        setPlaying(false)
+                    );
+                    audio.addEventListener("timeupdate", () => {
+                        const el = pills[loadedIndex];
+                        if (!el || !audio.duration) return;
+                        el.style.setProperty(
+                            "--progress",
+                            String(audio.currentTime / audio.duration)
+                        );
+                    });
+                    audio.addEventListener("ended", () => {
+                        if (loadedIndex > -1) {
+                            pills[loadedIndex].style.setProperty(
+                                "--progress",
+                                "0"
+                            );
+                        }
+                        setPlaying(false);
+                    });
+
+                    function hits(a, b, pad) {
+                        return (
+                            a.x < b.x + b.w + pad &&
+                            a.x + a.w + pad > b.x &&
+                            a.y < b.y + b.h + pad &&
+                            a.y + a.h + pad > b.y
+                        );
+                    }
+
+                    function layout() {
+                        const W = deck.clientWidth;
+                        const H = deck.clientHeight;
+                        const maxDist = Math.hypot(W, H) / 2;
+                        const placed = [];
+
+                        pills.forEach((el, i) => {
+                            if (i !== selectedIndex) return;
+                            const x = W / 2 - el.offsetWidth / 2;
+                            const y = H / 2 - el.offsetHeight / 2;
+                            el.classList.add("is-selected");
+                            el.style.zIndex = "20";
+                            el.style.setProperty("--veil", "0");
+                            el.style.transform =
+                                "translate(" +
+                                x +
+                                "px, " +
+                                y +
+                                "px) scale(1.12)";
+                            placed.push({
+                                x,
+                                y,
+                                w: el.offsetWidth,
+                                h: el.offsetHeight
+                            });
+                        });
+
+                        pills.forEach((el, i) => {
+                            if (i === selectedIndex) return;
+                            el.classList.remove("is-selected");
+                            const w = el.offsetWidth;
+                            const h = el.offsetHeight;
+                            let x = 8;
+                            let y = 8;
+                            let ok = false;
+                            for (let t = 0; t < 80 && !ok; t++) {
+                                x =
+                                    -48 +
+                                    Math.random() *
+                                        (W - w + 96);
+                                y =
+                                    -10 +
+                                    Math.random() *
+                                        (H - h + 20);
+                                ok = !placed.some((r) =>
+                                    hits(r, { x, y, w, h }, 10)
+                                );
+                            }
+                            if (!ok) {
+                                scan: for (
+                                    let yy = 8;
+                                    yy <= H - h - 8;
+                                    yy += 8
+                                ) {
+                                    for (
+                                        let xx = 8;
+                                        xx <= W - w - 8;
+                                        xx += 8
+                                    ) {
+                                        if (
+                                            !placed.some((r) =>
+                                                hits(
+                                                    r,
+                                                    { x: xx, y: yy, w, h },
+                                                    10
+                                                )
+                                            )
+                                        ) {
+                                            x = xx;
+                                            y = yy;
+                                            ok = true;
+                                            break scan;
+                                        }
+                                    }
+                                }
+                            }
+                            if (!ok) {
+                                x =
+                                    8 +
+                                    Math.random() *
+                                        Math.max(1, W - w - 16);
+                                y =
+                                    8 +
+                                    Math.random() *
+                                        Math.max(1, H - h - 16);
+                            }
+                            placed.push({ x, y, w, h });
+                            const dist = Math.hypot(
+                                x + w / 2 - W / 2,
+                                y + h / 2 - H / 2
+                            );
+                            el.style.zIndex = String(
+                                Math.max(1, 18 - Math.round(dist / 40))
+                            );
+                            el.style.setProperty("--veil", "0.85");
+                            el.style.transform =
+                                "translate(" +
+                                x.toFixed(1) +
+                                "px, " +
+                                y.toFixed(1) +
+                                "px) rotate(" +
+                                (Math.random() * 6 - 3).toFixed(2) +
+                                "deg)";
+                        });
+                    }
+
+                    button.addEventListener("click", () => {
+                        let next = selectedIndex;
+                        while (next === selectedIndex) {
+                            next = Math.floor(Math.random() * pills.length);
+                        }
+                        selectedIndex = next;
+                        layout();
+                        const resume = !audio.paused;
+                        loadedIndex = -1;
+                        if (resume) loadSelected(true);
+                    });
+
+                    layout();
+                    window.addEventListener("load", layout);
+                })();
+            </script>
 
             <div class="quote-block">
                 <figure class="quote">
