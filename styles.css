@@ -91,12 +91,9 @@ a {
   fill: currentColor;
 }
 
-.name {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
 .intro {
+  font-size: 0.9375rem;
+  font-weight: 500;
   color: var(--muted);
   text-wrap: pretty;
 }
@@ -106,16 +103,126 @@ a {
   font-weight: 500;
 }
 
+.intro .ts,
+.intro .rs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.08em 0.55em;
+  border-radius: 0.375em;
+  vertical-align: baseline;
+}
+
 .intro .ts {
   color: #3178c6;
+  background: rgba(49, 120, 198, 0.12);
 }
 
 .intro .rs {
   color: #d34516;
+  background: rgba(211, 69, 22, 0.12);
 }
 
-.intro .open {
-  color: #2e7d32;
+.intro .ts svg,
+.intro .rs svg {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+}
+
+.cta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+  margin-top: 0.5rem;
+  padding: 1.25rem;
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  overflow: hidden;
+}
+
+.cta-text {
+  position: relative;
+  color: var(--muted);
+}
+
+.cta-emojis {
+  position: absolute;
+  right: -0.75rem;
+  bottom: -1.25rem;
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cta-emojis span {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+.cta-emojis span:nth-child(1) {
+  transform: rotate(-10deg) translateY(-0.75rem);
+  z-index: 1;
+}
+
+.cta-emojis span:nth-child(2) {
+  transform: rotate(8deg) translateY(-1.5rem);
+  margin-left: -0.6rem;
+  z-index: 2;
+}
+
+.cta-emojis span:nth-child(3) {
+  transform: rotate(6deg) translateY(-0.25rem);
+  margin-left: -0.75rem;
+  z-index: 3;
+}
+
+.cta-emojis span:nth-child(4) {
+  transform: rotate(-14deg) translateY(-1rem);
+  margin-left: -0.7rem;
+  z-index: 4;
+}
+
+@media (max-width: 480px) {
+  .cta-emojis span {
+    font-size: 2.5rem;
+  }
+}
+
+.cta .call {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.5em 1em;
+  border-radius: 999px;
+  color: #fff;
+  background: #1c1c1e;
+  text-decoration: none;
+  transition:
+    transform 160ms var(--ease-out),
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+
+.cta .call svg {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta .call:hover {
+    background-color: #2a2a2d;
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.12);
+  }
+}
+
+.cta .call:active {
+  transform: scale(0.97);
 }
 
 .intro a {
