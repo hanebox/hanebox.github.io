@@ -56,7 +56,6 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
   </svg>
   <h1 class="intro">I’m Han <span aria-hidden="true">👋</span> I build software for the web and terminal.</h1>
   <p class="intro-detail">Mostly <span class="highlight highlight-ts">TypeScript</span>, a little <span class="highlight highlight-rust">Rust</span>. I like making useful things feel simple.</p>
-  <p class="time-context" data-home-timezone="{{ site.timezone }}" hidden>My time is <time class="home-time"></time> and your time is <time class="visitor-time"></time>.</p>
   <nav class="links" aria-label="Links">
     <a
       href="https://github.com/hanebox"
@@ -75,16 +74,6 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
     >
     <a href="mailto:hihanebox@gmail.com">Email</a>
   </nav>
-  <a class="call" href="https://cal.com/hanebox/15min" target="_blank" rel="noopener noreferrer" aria-label="Book a call (15 minutes)">
-    <span class="call-copy">
-      <span class="call-title">Have a project in mind?</span>
-      <span class="call-action">
-        <span class="call-cta">Book a call <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12 12 4M4 4h8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
-        <span class="call-duration">15 min</span>
-      </span>
-    </span>
-    <span class="call-emoji" aria-hidden="true">🗓️</span>
-  </a>
 </header>
 
 <section class="section">
@@ -349,47 +338,3 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
 </section>
 
 <script src="{{ '/assets/playlist.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/local-time.js' | relative_url }}" defer></script>
-
-<footer class="time-footer" aria-label="Local time and website appearance" hidden>
-  <div class="sun-clock">
-    <svg class="sun-clock-dial" viewBox="0 0 280 120" fill="none" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="daylight-spectrum" x1="24" y1="0" x2="256" y2="0" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#7789b8" />
-          <stop offset="0.22" stop-color="#d9a6a0" />
-          <stop offset="0.4" stop-color="#ebc28e" />
-          <stop offset="0.5" stop-color="#f2d69b" />
-          <stop offset="0.65" stop-color="#e6b47e" />
-          <stop offset="0.8" stop-color="#bd8e9f" />
-          <stop offset="1" stop-color="#7789b8" />
-        </linearGradient>
-        <linearGradient id="daylight-fade" x1="0" y1="40" x2="0" y2="100" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#fff" stop-opacity="0.16" />
-          <stop offset="1" stop-color="#fff" stop-opacity="0" />
-        </linearGradient>
-        <mask id="daylight-wash"><path d="M24 100a116 60 0 0 1 232 0Z" fill="url(#daylight-fade)" /></mask>
-      </defs>
-      <path d="M24 100a116 60 0 0 1 232 0Z" fill="url(#daylight-spectrum)" mask="url(#daylight-wash)" />
-      <path d="M24 100a116 60 0 0 1 232 0" stroke="url(#daylight-spectrum)" stroke-width="4" stroke-linecap="round" />
-      <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <g transform="translate(0 90) scale(0.65)">
-          <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z" />
-        </g>
-        <g transform="translate(132 4)">
-          <circle cx="8" cy="8" r="3" />
-          <path d="M8 0v1m0 14v1M0 8h1m14 0h1M2.3 2.3l.7.7m10 10 .7.7m0-11.4-.7.7M3 13l-.7.7" />
-        </g>
-        <g transform="translate(264 90) scale(0.65)">
-          <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z" />
-        </g>
-      </g>
-      <g class="sun-clock-marker">
-        <circle r="7" fill="var(--bg)" />
-        <circle r="4" fill="currentColor" />
-      </g>
-    </svg>
-    <time class="sun-clock-time" aria-label="Your local time"></time>
-  </div>
-  <p>This website adjusts to your timezone.</p>
-</footer>
