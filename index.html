@@ -54,8 +54,15 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
       d="M 20.18 35.46 Q 21.96 36.53 23.26 36.58 Q 24.56 36.63 25.56 36.39 Q 26.55 36.15 27.3 35.65 L 28.04 35.15"
     />
   </svg>
-  <h1 class="intro">I’m Han <span aria-hidden="true">👋</span> I build software for the web and terminal.</h1>
-  <p class="intro-detail">Mostly <span class="highlight highlight-ts">TypeScript</span>, a little <span class="highlight highlight-rust">Rust</span>. I like making useful things feel simple.</p>
+  <h1 class="intro">
+    I’m Han <span aria-hidden="true">👋</span> I build software for the web and
+    terminal.
+  </h1>
+  <p class="intro-detail">
+    Mostly <span class="highlight highlight-ts">TypeScript</span>, a little
+    <span class="highlight highlight-rust">Rust</span>. I like making useful
+    things feel simple.
+  </p>
   <nav class="links" aria-label="Links">
     <a
       href="https://github.com/hanebox"
@@ -82,7 +89,7 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
     <li>
       <a
         class="project-row"
-        href="https://github.com/hanebox/ekphos"
+        href="https://github.com/nostacks/ekphos"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -159,14 +166,18 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
 <section class="section" aria-labelledby="writing-heading">
   <div class="section-heading">
     <h2 class="section-label" id="writing-heading">Writing</h2>
-    <a class="section-note writing-link" href="{{ '/blog/' | relative_url }}">All posts</a>
+    <a class="section-note writing-link" href="{{ '/blog/' | relative_url }}"
+      >All posts</a
+    >
   </div>
   <ol class="post-list">
     {% for post in site.posts limit: 1 %}
     <li>
       <a class="post-link" href="{{ post.url | relative_url }}">
         <span class="post-link-title">{{ post.title }}</span>
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        <time datetime="{{ post.date | date_to_xmlschema }}"
+          >{{ post.date | date: "%b %-d, %Y" }}</time
+        >
       </a>
     </li>
     {% endfor %}
@@ -176,27 +187,63 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
 
 <section class="section">
   <div class="section-heading">
-    <h2 class="section-label" id="playlist-heading">On repeat <span aria-hidden="true">🎧</span></h2>
+    <h2 class="section-label" id="playlist-heading">
+      On repeat <span aria-hidden="true">🎧</span>
+    </h2>
   </div>
-  <div class="playlist" data-preview-base="{{ '/assets/previews/' | relative_url }}">
+  <div
+    class="playlist"
+    data-preview-base="{{ '/assets/previews/' | relative_url }}"
+  >
     <div class="record-player" hidden>
       <div class="record-stage" role="group" aria-label="Playlist controls">
-        <button class="transport-btn" id="prev-btn" type="button" aria-label="Previous track" title="Previous track">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="5" width="2" height="14" rx="1" /><path d="M19 5 8 12l11 7z" /></svg>
-          </button>
+        <button
+          class="transport-btn"
+          id="prev-btn"
+          type="button"
+          aria-label="Previous track"
+          title="Previous track"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="5" y="5" width="2" height="14" rx="1" />
+            <path d="M19 5 8 12l11 7z" />
+          </svg>
+        </button>
         <div class="record-stack" aria-hidden="true">
-          <div class="vinyl"><img class="vinyl-label" alt="" width="60" height="60" /></div>
+          <div class="vinyl">
+            <img class="vinyl-label" alt="" width="60" height="60" />
+          </div>
         </div>
-        <button class="player-btn" id="play-btn" type="button" aria-label="Play preview" title="Play preview">
-            <span class="player-icon" aria-hidden="true">
-              <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="m8 5 11 7-11 7z" /></svg>
-              <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
-            </span>
-            <span class="play-label sr-only">Play preview</span>
-          </button>
-        <button class="transport-btn" id="next-btn" type="button" aria-label="Next track" title="Next track">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="17" y="5" width="2" height="14" rx="1" /><path d="m5 5 11 7-11 7z" /></svg>
-          </button>
+        <button
+          class="player-btn"
+          id="play-btn"
+          type="button"
+          aria-label="Play preview"
+          title="Play preview"
+        >
+          <span class="player-icon" aria-hidden="true">
+            <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor">
+              <path d="m8 5 11 7-11 7z" />
+            </svg>
+            <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="5" width="4" height="14" rx="1" />
+              <rect x="14" y="5" width="4" height="14" rx="1" />
+            </svg>
+          </span>
+          <span class="play-label sr-only">Play preview</span>
+        </button>
+        <button
+          class="transport-btn"
+          id="next-btn"
+          type="button"
+          aria-label="Next track"
+          title="Next track"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="17" y="5" width="2" height="14" rx="1" />
+            <path d="m5 5 11 7-11 7z" />
+          </svg>
+        </button>
       </div>
       <div class="player-info">
         <a class="now-title" target="_blank" rel="noopener noreferrer"></a>
@@ -204,135 +251,146 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
       </div>
       <div class="playback-progress">
         <span class="elapsed">0:00</span>
-        <progress class="preview-progress" value="0" max="1" aria-label="Preview progress"></progress>
+        <progress
+          class="preview-progress"
+          value="0"
+          max="1"
+          aria-label="Preview progress"
+        ></progress>
         <span class="duration">0:00</span>
       </div>
       <p class="player-status" role="status" aria-atomic="true"></p>
-      <p class="track-announcement sr-only" role="status" aria-atomic="true"></p>
+      <p
+        class="track-announcement sr-only"
+        role="status"
+        aria-atomic="true"
+      ></p>
     </div>
     <details class="track-disclosure">
-      <summary>All 7 tracks <span class="disclosure-toggle" aria-hidden="true"></span></summary>
+      <summary>
+        All 7 tracks <span class="disclosure-toggle" aria-hidden="true"></span>
+      </summary>
       <div class="track-list">
-      <a
-        class="pill"
-        href="https://open.spotify.com/track/6gPbjxlebqkFyCaLY4SRVm"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          class="pill-image"
-          src="{{ '/assets/playlist/music-underscores.jpg' | relative_url }}"
-          alt="Cover art for Music by underscores"
-          width="300"
-          height="300"
-          loading="lazy"
-        />
-        <span class="pill-title">Music</span>
-        <span class="pill-sub">underscores</span>
-      </a>
-      <a
-        class="pill"
-        href="https://open.spotify.com/track/16VomaSiUmaRdubMxh4FyY"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          class="pill-image"
-          src="{{ '/assets/playlist/paw-paw-illit.jpg' | relative_url }}"
-          alt="Cover art for paw, paw! by ILLIT"
-          width="300"
-          height="300"
-          loading="lazy"
-        />
-        <span class="pill-title">paw, paw!</span>
-        <span class="pill-sub">ILLIT</span>
-      </a>
-      <a
-        class="pill"
-        href="https://open.spotify.com/track/1FNRrP6GaSL215RvOCQNCw"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          class="pill-image"
-          src="{{ '/assets/playlist/anesthesia-aries.jpg' | relative_url }}"
-          alt="Cover art for ANESTHESIA by ARIES"
-          width="300"
-          height="300"
-          loading="lazy"
-        />
-        <span class="pill-title">ANESTHESIA</span>
-        <span class="pill-sub">ARIES</span>
-      </a>
-      <a
-        class="pill"
-        href="https://open.spotify.com/track/4sO4TFR2V8zXmuEOeJlt0e"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          class="pill-image"
-          src="{{ '/assets/playlist/headlights-in-color.jpg' | relative_url }}"
-          alt="Cover art for Headlights by In Color"
-          width="300"
-          height="300"
-          loading="lazy"
-        />
-        <span class="pill-title">Headlights</span>
-        <span class="pill-sub">In Color</span>
-      </a>
-      <a
-        class="pill"
-        href="https://open.spotify.com/track/4FLzbyklBSxPgU1PW82UUj"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          class="pill-image"
-          src="{{ '/assets/playlist/when-my-wings-are-cut-off-daine.jpg' | relative_url }}"
-          alt="Cover art for when my wings are cut off by daine"
-          width="300"
-          height="300"
-          loading="lazy"
-        />
-        <span class="pill-title">when my wings are cut off</span>
-        <span class="pill-sub">daine</span>
-      </a>
-      <a
-        class="pill"
-        href="https://open.spotify.com/track/5xMjhZKSo8yh5r9b5vrYRr"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          class="pill-image"
-          src="{{ '/assets/playlist/tailor-swif-asap-rocky.jpg' | relative_url }}"
-          alt="Cover art for Tailor Swif by A$AP Rocky"
-          width="300"
-          height="300"
-          loading="lazy"
-        />
-        <span class="pill-title">Tailor Swif</span>
-        <span class="pill-sub">A$AP Rocky</span>
-      </a>
-      <a
-        class="pill"
-        href="https://open.spotify.com/track/451PPqRJGkQQKoK0Tqgnmz"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          class="pill-image"
-          src="{{ '/assets/playlist/lithonia-childish-gambino.jpg' | relative_url }}"
-          alt="Cover art for Lithonia by Childish Gambino"
-          width="300"
-          height="300"
-          loading="lazy"
-        />
-        <span class="pill-title">Lithonia</span>
-        <span class="pill-sub">Childish Gambino</span>
-      </a>
-    </div>
+        <a
+          class="pill"
+          href="https://open.spotify.com/track/6gPbjxlebqkFyCaLY4SRVm"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="pill-image"
+            src="{{ '/assets/playlist/music-underscores.jpg' | relative_url }}"
+            alt="Cover art for Music by underscores"
+            width="300"
+            height="300"
+            loading="lazy"
+          />
+          <span class="pill-title">Music</span>
+          <span class="pill-sub">underscores</span>
+        </a>
+        <a
+          class="pill"
+          href="https://open.spotify.com/track/16VomaSiUmaRdubMxh4FyY"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="pill-image"
+            src="{{ '/assets/playlist/paw-paw-illit.jpg' | relative_url }}"
+            alt="Cover art for paw, paw! by ILLIT"
+            width="300"
+            height="300"
+            loading="lazy"
+          />
+          <span class="pill-title">paw, paw!</span>
+          <span class="pill-sub">ILLIT</span>
+        </a>
+        <a
+          class="pill"
+          href="https://open.spotify.com/track/1FNRrP6GaSL215RvOCQNCw"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="pill-image"
+            src="{{ '/assets/playlist/anesthesia-aries.jpg' | relative_url }}"
+            alt="Cover art for ANESTHESIA by ARIES"
+            width="300"
+            height="300"
+            loading="lazy"
+          />
+          <span class="pill-title">ANESTHESIA</span>
+          <span class="pill-sub">ARIES</span>
+        </a>
+        <a
+          class="pill"
+          href="https://open.spotify.com/track/4sO4TFR2V8zXmuEOeJlt0e"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="pill-image"
+            src="{{ '/assets/playlist/headlights-in-color.jpg' | relative_url }}"
+            alt="Cover art for Headlights by In Color"
+            width="300"
+            height="300"
+            loading="lazy"
+          />
+          <span class="pill-title">Headlights</span>
+          <span class="pill-sub">In Color</span>
+        </a>
+        <a
+          class="pill"
+          href="https://open.spotify.com/track/4FLzbyklBSxPgU1PW82UUj"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="pill-image"
+            src="{{ '/assets/playlist/when-my-wings-are-cut-off-daine.jpg' | relative_url }}"
+            alt="Cover art for when my wings are cut off by daine"
+            width="300"
+            height="300"
+            loading="lazy"
+          />
+          <span class="pill-title">when my wings are cut off</span>
+          <span class="pill-sub">daine</span>
+        </a>
+        <a
+          class="pill"
+          href="https://open.spotify.com/track/5xMjhZKSo8yh5r9b5vrYRr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="pill-image"
+            src="{{ '/assets/playlist/tailor-swif-asap-rocky.jpg' | relative_url }}"
+            alt="Cover art for Tailor Swif by A$AP Rocky"
+            width="300"
+            height="300"
+            loading="lazy"
+          />
+          <span class="pill-title">Tailor Swif</span>
+          <span class="pill-sub">A$AP Rocky</span>
+        </a>
+        <a
+          class="pill"
+          href="https://open.spotify.com/track/451PPqRJGkQQKoK0Tqgnmz"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="pill-image"
+            src="{{ '/assets/playlist/lithonia-childish-gambino.jpg' | relative_url }}"
+            alt="Cover art for Lithonia by Childish Gambino"
+            width="300"
+            height="300"
+            loading="lazy"
+          />
+          <span class="pill-title">Lithonia</span>
+          <span class="pill-sub">Childish Gambino</span>
+        </a>
+      </div>
     </details>
   </div>
 </section>
