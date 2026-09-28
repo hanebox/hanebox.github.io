@@ -411,30 +411,32 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
 <section class="section" aria-labelledby="contact-heading">
   <h2 class="section-label" id="contact-heading">Contact</h2>
   <form
-    class="contact-form"
+    class="contact-card contact-form"
     action="https://api.nisuform.com/s/gf5fl6k7zi3r6qygbtkz"
     method="POST"
   >
-    <div class="field">
-      <label for="contact-name">Name</label>
-      <input
-        id="contact-name"
-        type="text"
-        name="name"
-        autocomplete="name"
-        required
-      />
-    </div>
-    <div class="field">
-      <label for="contact-email">Email</label>
-      <input
-        id="contact-email"
-        type="email"
-        name="email"
-        autocomplete="email"
-        spellcheck="false"
-        required
-      />
+    <div class="contact-row">
+      <div class="field">
+        <label for="contact-name">Name</label>
+        <input
+          id="contact-name"
+          type="text"
+          name="name"
+          autocomplete="name"
+          required
+        />
+      </div>
+      <div class="field">
+        <label for="contact-email">Email</label>
+        <input
+          id="contact-email"
+          type="email"
+          name="email"
+          autocomplete="email"
+          spellcheck="false"
+          required
+        />
+      </div>
     </div>
     <div class="field">
       <label for="contact-message">Message</label>
@@ -452,10 +454,12 @@ description: Han is a software engineer building tools like Ekphos and Notem. Op
       tabindex="-1"
       autocomplete="off"
     />
-    <button class="contact-submit" type="submit">Send message</button>
-    <p class="contact-error" role="alert"></p>
+    <div class="contact-footer">
+      <p class="contact-error" role="alert"></p>
+      <button class="contact-submit" type="submit">Send message</button>
+    </div>
   </form>
-  <p class="contact-success" tabindex="-1" hidden>
+  <p class="contact-card contact-success" tabindex="-1" hidden>
     Thanks for reaching out. Your message is on its way and I’ll get back to
     you soon.
   </p>
