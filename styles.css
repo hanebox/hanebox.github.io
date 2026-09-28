@@ -25,6 +25,7 @@
   --card-bg: rgba(0,0,0,0.04);
   --prose: #363636;
   --code-bg: #f6f6f6;
+  --danger: #b42318;
   color-scheme: light;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -381,6 +382,91 @@ a {
   .icon-play, .icon-pause { transition: opacity 150ms cubic-bezier(0.2, 0, 0, 1), scale 150ms cubic-bezier(0.2, 0, 0, 1), filter 150ms cubic-bezier(0.2, 0, 0, 1); }
 }
 
+/* Contact */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.field label {
+  color: var(--muted);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+.field textarea {
+  min-height: 7.5rem;
+  resize: vertical;
+}
+
+.contact-trap {
+  display: none;
+}
+
+.contact-submit {
+  align-self: flex-start;
+  min-height: 40px;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.contact-form[aria-busy="true"] .contact-submit {
+  cursor: progress;
+}
+
+.contact-error {
+  color: var(--danger);
+  text-wrap: pretty;
+}
+
+.contact-error:empty {
+  display: none;
+}
+
+.contact-success {
+  text-wrap: pretty;
+}
+
+.contact-success:focus {
+  outline: none;
+}
+
+@media (pointer: coarse) {
+  .field input,
+  .field textarea {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .field input,
+  .field textarea { transition: border-color 150ms ease; }
+  .contact-submit { transition: transform 150ms cubic-bezier(0.2, 0, 0, 1), background-color 150ms ease; }
+  .contact-submit:active { transform: scale(0.96); }
+}
+
 /* Blog */
 
 .writing-page {
@@ -555,6 +641,8 @@ a {
   .pill:hover, .transport-btn:hover { background-color: var(--hover); }
   .player-btn:hover { background-color: #363636; }
   .now-title:hover { text-decoration-color: var(--text); }
+  .field input:hover, .field textarea:hover { border-color: var(--border-hover); }
+  .contact-submit:hover { background-color: var(--accent-hover); }
 
 
 
