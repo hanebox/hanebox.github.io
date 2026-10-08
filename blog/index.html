@@ -1,37 +1,40 @@
 ---
 layout: default
 title: Blog
-description: Notes on software, tools, and things I learn along the way.
+description: Notes on software, interfaces, and the tools I build.
 permalink: /blog/
-page_class: writing-page
+page_class: reading
 ---
-<nav class="site-nav" aria-label="Primary navigation">
-    <a class="site-name" href="{{ '/' | relative_url }}">Han</a>
-    <span class="site-links">
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/blog/' | relative_url }}" aria-current="page">Blog</a>
-    </span>
-</nav>
+<div class="page-top">
+    <a class="back" href="{{ '/' | relative_url }}">
+        {% include icon.html name="arrow-left" %}
+        Home
+    </a>
+    <a class="feed" href="{{ '/feed.xml' | relative_url }}">
+        {% include icon.html name="rss" %}
+        RSS
+    </a>
+</div>
 
-<section aria-label="Blog posts">
-    {% if site.posts.size > 0 %}
-    <ol class="post-list">
-        {% for post in site.posts %}
-        <li>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-                <span class="post-link-copy">
-                    <span class="post-link-title">
-                        {{ post.title }}
-                    </span>
-                </span>
-                <time datetime="{{ post.date | date_to_xmlschema }}">
-                    {{ post.date | date: "%b %-d, %Y" }}
-                </time>
-            </a>
-        </li>
-        {% endfor %}
-    </ol>
-    {% else %}
-    <p class="empty-state">No posts yet.</p>
-    {% endif %}
-</section>
+<header class="page-head">
+    <h1 class="page-title">Blog</h1>
+    <p class="page-sub">Notes on software, interfaces, and the tools I build.</p>
+</header>
+
+{% if site.posts.size > 0 %}
+<ol class="post-index">
+    {% for post in site.posts %}
+    <li>
+        <a class="entry" href="{{ post.url | relative_url }}">
+            <span class="entry-top">
+                <span class="entry-title">{{ post.title }}</span>
+                <time class="entry-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            </span>
+            {% if post.description %}<span class="entry-desc">{{ post.description }}</span>{% endif %}
+        </a>
+    </li>
+    {% endfor %}
+</ol>
+{% else %}
+<p class="empty-state">No posts yet.</p>
+{% endif %}

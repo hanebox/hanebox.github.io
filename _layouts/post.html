@@ -1,31 +1,20 @@
 ---
 layout: default
-page_class: writing-page
 ---
-<nav class="site-nav" aria-label="Primary navigation">
-    <a class="site-name" href="{{ '/' | relative_url }}">Han</a>
-    <span class="site-links">
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/blog/' | relative_url }}">Blog</a>
-    </span>
-</nav>
+<div class="page-top">
+    <a class="back" href="{{ '/blog/' | relative_url }}">
+        {% include icon.html name="arrow-left" %}
+        All posts
+    </a>
+</div>
 
-<article class="post">
-    <header class="post-header">
-        <p class="post-date">
-            <time datetime="{{ page.date | date_to_xmlschema }}">
-                {{ page.date | date: "%B %-d, %Y" }}
-            </time>
-        </p>
-        <h1 class="post-title">{{ page.title }}</h1>
+<article class="article" aria-labelledby="post-title">
+    <header class="page-head">
+        <time class="article-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        <h1 class="page-title" id="post-title">{{ page.title }}</h1>
+        {% if page.description %}<p class="page-sub">{{ page.description }}</p>{% endif %}
     </header>
-
-    <div class="post-content">
+    <div class="article-body">
         {{ content }}
     </div>
-
-    <footer class="post-footer">
-        <a href="{{ '/blog/' | relative_url }}">Back to all posts</a>
-    </footer>
 </article>
-

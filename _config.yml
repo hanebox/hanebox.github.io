@@ -20,3 +20,11 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      page_class: reading

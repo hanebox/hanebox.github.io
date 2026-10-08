@@ -25,3 +25,7 @@ date: YYYY-MM-DD HH:MM:SS +0700
 
 Write the post here.
 ```
+
+## Credits
+
+Interface icons come from [Lucide](https://lucide.dev) (ISC license).

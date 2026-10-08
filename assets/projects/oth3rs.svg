@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <clipPath id="clip">
+      <circle cx="32" cy="32" r="32"/>
+    </clipPath>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <radialGradient id="light" cx="0.34" cy="0.28" r="0.7">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.6"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="shade" cx="0.36" cy="0.3" r="0.85">
+      <stop offset="0.5" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.5"/>
+    </radialGradient>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="64" height="64" fill="#6c4dff"/>
+    <g filter="url(#blur)">
+      <circle cx="16" cy="12" r="22" fill="#ffb26b"/>
+      <circle cx="54" cy="22" r="18" fill="#ff5c8a"/>
+      <circle cx="16" cy="54" r="20" fill="#4f8dff"/>
+      <circle cx="52" cy="58" r="16" fill="#3b2aa6"/>
+    </g>
+    <circle cx="32" cy="32" r="32" fill="url(#shade)"/>
+    <circle cx="32" cy="32" r="32" fill="url(#light)"/>
+  </g>
+</svg>

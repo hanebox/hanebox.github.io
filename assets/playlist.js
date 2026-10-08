@@ -1,28 +1,24 @@
 (() => {
-  const playlist = document.querySelector('.playlist');
-  if (!playlist) return;
+  const player = document.querySelector('.player');
+  if (!player) return;
 
-  const tracks = [...playlist.querySelectorAll('.pill')].map((link) => {
-    const image = link.querySelector('img');
-    const slug = new URL(image.src).pathname.split('/').pop().replace(/\.jpg$/, '');
-    return {
-      link,
-      title: link.querySelector('.pill-title').textContent.trim(),
-      artist: link.querySelector('.pill-sub').textContent.trim(),
-      image: image.src,
-      preview: playlist.dataset.previewBase + slug + '.m4a',
-    };
-  });
+  const tracks = [...player.querySelectorAll('.track')].map((row) => ({
+    row,
+    title: row.querySelector('.track-title').textContent.trim(),
+    artist: row.querySelector('.track-artist').textContent.trim(),
+    href: row.dataset.href,
+    cover: player.dataset.coverBase + row.dataset.slug + '.jpg',
+    preview: player.dataset.previewBase + row.dataset.slug + '.m4a',
+  }));
   if (!tracks.length) return;
 
-  const find = (selector) => playlist.querySelector(selector);
+  const find = (selector) => player.querySelector(selector);
   const audio = new Audio();
   audio.preload = 'none';
   const playButton = find('#play-btn');
-  const playLabel = find('.play-label');
-  const progress = find('.preview-progress');
+  const meter = find('.meter');
   const status = find('.player-status');
-  const stack = find('.record-stack');
+  const link = find('.now-title');
   let index = 0;
   let loadedIndex = -1;
   let wantsPlayback = false;
@@ -35,44 +31,45 @@
 
   function setState(state) {
     const playing = state === 'playing';
-    playButton.classList.toggle('is-playing', playing);
-    stack.classList.toggle('is-playing', playing);
-    playLabel.textContent = state === 'loading' ? 'Loading…' : playing ? 'Pause' : 'Play preview';
-    playButton.title = state === 'loading' ? 'Cancel loading' : playing ? 'Pause preview' : 'Play preview';
-    playButton.setAttribute('aria-label', `${state === 'loading' ? 'Cancel loading' : playing ? 'Pause preview' : 'Play preview'}: ${tracks[index].title}`);
+    const label = state === 'loading' ? 'Cancel loading' : playing ? 'Pause preview' : 'Play preview';
+    player.classList.toggle('is-playing', playing);
+    player.classList.toggle('is-loading', state === 'loading');
+    playButton.title = label;
+    playButton.setAttribute('aria-label', `${label}: ${tracks[index].title}`);
+    if (state === 'loading') status.textContent = 'Loading';
+    else if (status.textContent === 'Loading') status.textContent = '';
   }
 
   function updateProgress() {
     const duration = Number.isFinite(audio.duration) ? audio.duration : 0;
-    progress.value = duration ? Math.min(1, audio.currentTime / duration) : 0;
+    meter.value = duration ? Math.min(1, audio.currentTime / duration) : 0;
     find('.elapsed').textContent = formatTime(audio.currentTime);
     find('.duration').textContent = formatTime(duration);
   }
 
   function render(announce = false) {
     const track = tracks[index];
-    const title = find('.now-title');
-    title.textContent = track.title;
-    title.href = track.link.href;
-    title.setAttribute('aria-label', `${track.title} by ${track.artist} on Spotify`);
+    link.textContent = track.title;
     find('.now-artist').textContent = track.artist;
-    find('.vinyl-label').src = track.image;
+    find('.now-cover').src = track.cover;
+    link.href = track.href;
+    link.setAttribute('aria-label', `Open ${track.title} by ${track.artist} on Spotify`);
     tracks.forEach((item, i) => {
-      if (i === index) item.link.setAttribute('aria-current', 'true');
-      else item.link.removeAttribute('aria-current');
+      if (i === index) item.row.setAttribute('aria-current', 'true');
+      else item.row.removeAttribute('aria-current');
     });
     find('.elapsed').textContent = '0:00';
     find('.duration').textContent = '0:00';
-    progress.value = 0;
+    meter.value = 0;
     status.textContent = '';
-    find('.track-announcement').textContent = announce ? `${track.title} — ${track.artist}` : '';
+    find('.track-announcement').textContent = announce ? `${track.title} by ${track.artist}` : '';
     setState('paused');
   }
 
   function showError() {
     wantsPlayback = false;
     setState('paused');
-    status.textContent = 'Preview unavailable.';
+    status.textContent = 'Preview unavailable';
   }
 
   async function play() {
@@ -94,47 +91,50 @@
     }
   }
 
-  function select(next) {
-    const resume = wantsPlayback;
+  function pause() {
+    wantsPlayback = false;
+    ++requestId;
+    audio.pause();
+    setState('paused');
+  }
+
+  function select(next, resume = wantsPlayback) {
     ++requestId;
     audio.pause();
     audio.removeAttribute('src');
     audio.load();
     loadedIndex = -1;
+    wantsPlayback = false;
     index = (next + tracks.length) % tracks.length;
     render(true);
-
     if (resume) play();
   }
 
-  playButton.addEventListener('click', () => {
-    if (wantsPlayback) {
-      wantsPlayback = false;
-      ++requestId;
-      audio.pause();
-      setState('paused');
-    } else play();
-  });
+  playButton.addEventListener('click', () => (wantsPlayback ? pause() : play()));
   find('#prev-btn').addEventListener('click', () => select(index - 1));
   find('#next-btn').addEventListener('click', () => select(index + 1));
+  tracks.forEach((track, i) => {
+    track.row.addEventListener('click', () => {
+      if (i !== index) select(i, true);
+      else if (wantsPlayback) pause();
+      else play();
+    });
+  });
   audio.addEventListener('timeupdate', updateProgress);
   audio.addEventListener('loadedmetadata', updateProgress);
   audio.addEventListener('playing', () => { if (wantsPlayback) setState('playing'); });
   audio.addEventListener('waiting', () => { if (wantsPlayback) setState('loading'); });
   audio.addEventListener('pause', () => { if (audio.paused && !wantsPlayback) setState('paused'); });
   audio.addEventListener('ended', () => {
-    wantsPlayback = false;
-    setState('paused');
-    status.textContent = '';
+    if (index < tracks.length - 1) select(index + 1, true);
+    else {
+      wantsPlayback = false;
+      setState('paused');
+    }
   });
   audio.addEventListener('error', () => { if (audio.error && wantsPlayback) showError(); });
-  window.addEventListener('pagehide', () => {
-    wantsPlayback = false;
-    ++requestId;
-    audio.pause();
-    setState('paused');
-  });
+  window.addEventListener('pagehide', pause);
 
   render();
-  find('.record-player').hidden = false;
+  player.hidden = false;
 })();
