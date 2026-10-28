@@ -117,30 +117,21 @@ button {
 }
 
 .home {
-  display: grid;
-  grid-template-columns: 17rem minmax(0, 1fr);
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    "about main"
-    "player main";
-  align-items: start;
-  gap: 2.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 40rem;
 }
 
 .about {
-  grid-area: about;
+  max-width: 26rem;
 }
 
 .main {
-  grid-area: main;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
   min-width: 0;
-}
-
-.player {
-  grid-area: player;
 }
 
 .section-title {
@@ -234,30 +225,23 @@ button {
 }
 
 .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: 0.5rem;
   list-style: none;
 }
 
-.projects li {
-  display: flex;
-}
-
 .project {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  align-items: center;
   gap: 0.75rem;
-  width: 100%;
-  padding: 0.75rem;
-  background: var(--surface);
+  margin-inline: -0.5rem;
+  padding: 0.375rem 0.5rem;
 }
 
 .project-logo {
   display: grid;
   place-items: center;
-  flex: none;
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   background: var(--tile);
 }
 
@@ -265,38 +249,17 @@ button {
   display: block;
 }
 
-.project-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.project-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+.project-desc {
+  overflow: hidden;
+  color: var(--muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .project-arrow {
   width: 12px;
   height: 12px;
   color: var(--faint);
-}
-
-.project-desc {
-  margin-top: 0.125rem;
-  color: var(--muted);
-  text-wrap: pretty;
-}
-
-.project-url {
-  margin-top: 0.5rem;
-  overflow: hidden;
-  color: var(--faint);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .jobs {
@@ -736,22 +699,6 @@ button {
     text-decoration: underline;
     text-decoration-color: var(--faint);
     text-underline-offset: 3px;
-  }
-}
-
-@media (max-width: 52rem) {
-  .home {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: none;
-    grid-template-areas:
-      "about"
-      "main"
-      "player";
-    max-width: 40rem;
-  }
-
-  .about {
-    max-width: 26rem;
   }
 }
 
