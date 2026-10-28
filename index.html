@@ -24,22 +24,19 @@ page_class: home
     <li>
       <a class="link" href="https://github.com/hanebox" target="_blank" rel="noopener noreferrer">
         {% include icon.html name="github" %}
-        <span class="link-label">GitHub</span>
-        <span class="link-value">hanebox</span>
+        GitHub
       </a>
     </li>
     <li>
       <a class="link" href="https://x.com/hanebox" target="_blank" rel="noopener noreferrer">
         {% include icon.html name="x" %}
-        <span class="link-label">X</span>
-        <span class="link-value">@hanebox</span>
+        X
       </a>
     </li>
     <li>
       <a class="link" href="mailto:han@nostacks.xyz">
         {% include icon.html name="mail" %}
-        <span class="link-label">Email</span>
-        <span class="link-value">han@nostacks.xyz</span>
+        Email
       </a>
     </li>
   </ul>
@@ -61,7 +58,7 @@ page_class: home
             <img src="{{ '/assets/projects/ekphos.svg' | relative_url }}" alt="" width="16" height="16" />
           </span>
           <span class="project-name">Ekphos</span>
-          <span class="project-desc">Markdown note manager for the terminal, written in Rust.</span>
+          <span class="project-desc">Terminal Markdown note manager, written in Rust.</span>
           {% include icon.html name="arrow-up-right" class="project-arrow" %}
         </a>
       </li>
@@ -93,7 +90,7 @@ page_class: home
             <img src="{{ '/assets/projects/menura.svg' | relative_url }}" alt="" width="16" height="16" />
           </span>
           <span class="project-name">Menura</span>
-          <span class="project-desc">Free video downloader for YouTube, TikTok, Instagram, and more.</span>
+          <span class="project-desc">Free video downloader for YouTube, TikTok, and more.</span>
           {% include icon.html name="arrow-up-right" class="project-arrow" %}
         </a>
       </li>
@@ -169,156 +166,3 @@ page_class: home
   </section>
   {% endif %}
 </div>
-
-<section
-  class="player"
-  aria-labelledby="player-title"
-  data-preview-base="{{ '/assets/previews/' | relative_url }}"
-  data-cover-base="{{ '/assets/playlist/' | relative_url }}"
-  hidden
->
-  <h2 class="section-title" id="player-title">On repeat</h2>
-  <div class="player-card">
-    <div class="player-now">
-      <img class="now-cover" src="{{ '/assets/playlist/music-underscores.jpg' | relative_url }}" alt="" width="40" height="40" />
-      <div class="now-meta">
-        <a class="now-title" href="https://open.spotify.com/track/6gPbjxlebqkFyCaLY4SRVm" target="_blank" rel="noopener noreferrer">Music</a>
-        <p class="now-artist">underscores</p>
-        <p class="player-status" role="status" aria-atomic="true"></p>
-      </div>
-    </div>
-    <div class="player-bar">
-      <div class="player-controls">
-        <button class="ctrl" id="prev-btn" type="button" aria-label="Previous track" title="Previous track">
-          {% include icon.html name="skip-back" class="solid" %}
-        </button>
-        <button class="ctrl ctrl-play" id="play-btn" type="button" aria-label="Play preview" title="Play preview">
-          {% include icon.html name="play" class="solid icon-play" %}
-          {% include icon.html name="pause" class="solid icon-pause" %}
-        </button>
-        <button class="ctrl" id="next-btn" type="button" aria-label="Next track" title="Next track">
-          {% include icon.html name="skip-forward" class="solid" %}
-        </button>
-      </div>
-      <span class="elapsed">0:00</span>
-      <progress class="meter" value="0" max="1" aria-label="Preview progress"></progress>
-      <span class="duration">0:00</span>
-    </div>
-    <p class="track-announcement sr-only" role="status" aria-atomic="true"></p>
-    <details class="tracks">
-      <summary>
-        <span>7 tracks</span>
-        {% include icon.html name="chevron-down" class="tracks-chevron" %}
-      </summary>
-      <ol class="tracklist">
-        <li>
-          <button
-            class="track"
-            type="button"
-            data-slug="music-underscores"
-            data-href="https://open.spotify.com/track/6gPbjxlebqkFyCaLY4SRVm"
-          >
-            <span class="track-no">
-              <span class="track-num">1</span>
-              {% include icon.html name="audio-lines" class="track-eq" %}
-            </span>
-            <span class="track-title">Music</span>
-            <span class="track-artist">underscores</span>
-          </button>
-        </li>
-        <li>
-          <button
-            class="track"
-            type="button"
-            data-slug="paw-paw-illit"
-            data-href="https://open.spotify.com/track/16VomaSiUmaRdubMxh4FyY"
-          >
-            <span class="track-no">
-              <span class="track-num">2</span>
-              {% include icon.html name="audio-lines" class="track-eq" %}
-            </span>
-            <span class="track-title">paw, paw!</span>
-            <span class="track-artist">ILLIT</span>
-          </button>
-        </li>
-        <li>
-          <button
-            class="track"
-            type="button"
-            data-slug="anesthesia-aries"
-            data-href="https://open.spotify.com/track/1FNRrP6GaSL215RvOCQNCw"
-          >
-            <span class="track-no">
-              <span class="track-num">3</span>
-              {% include icon.html name="audio-lines" class="track-eq" %}
-            </span>
-            <span class="track-title">ANESTHESIA</span>
-            <span class="track-artist">ARIES</span>
-          </button>
-        </li>
-        <li>
-          <button
-            class="track"
-            type="button"
-            data-slug="headlights-in-color"
-            data-href="https://open.spotify.com/track/4sO4TFR2V8zXmuEOeJlt0e"
-          >
-            <span class="track-no">
-              <span class="track-num">4</span>
-              {% include icon.html name="audio-lines" class="track-eq" %}
-            </span>
-            <span class="track-title">Headlights</span>
-            <span class="track-artist">In Color</span>
-          </button>
-        </li>
-        <li>
-          <button
-            class="track"
-            type="button"
-            data-slug="when-my-wings-are-cut-off-daine"
-            data-href="https://open.spotify.com/track/4FLzbyklBSxPgU1PW82UUj"
-          >
-            <span class="track-no">
-              <span class="track-num">5</span>
-              {% include icon.html name="audio-lines" class="track-eq" %}
-            </span>
-            <span class="track-title">when my wings are cut off</span>
-            <span class="track-artist">daine</span>
-          </button>
-        </li>
-        <li>
-          <button
-            class="track"
-            type="button"
-            data-slug="tailor-swif-asap-rocky"
-            data-href="https://open.spotify.com/track/5xMjhZKSo8yh5r9b5vrYRr"
-          >
-            <span class="track-no">
-              <span class="track-num">6</span>
-              {% include icon.html name="audio-lines" class="track-eq" %}
-            </span>
-            <span class="track-title">Tailor Swif</span>
-            <span class="track-artist">A$AP Rocky</span>
-          </button>
-        </li>
-        <li>
-          <button
-            class="track"
-            type="button"
-            data-slug="lithonia-childish-gambino"
-            data-href="https://open.spotify.com/track/451PPqRJGkQQKoK0Tqgnmz"
-          >
-            <span class="track-no">
-              <span class="track-num">7</span>
-              {% include icon.html name="audio-lines" class="track-eq" %}
-            </span>
-            <span class="track-title">Lithonia</span>
-            <span class="track-artist">Childish Gambino</span>
-          </button>
-        </li>
-      </ol>
-    </details>
-  </div>
-</section>
-
-<script src="{{ '/assets/playlist.js' | relative_url }}" defer></script>
