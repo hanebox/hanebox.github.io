@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tengku Farhan</title>
+  <meta name="description" content="Software engineer in Jakarta. Founding engineer at Pivy, building open source tools under nostacks.">
+  <meta name="theme-color" content="#0e0e10">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tengku Farhan">
+  <meta property="og:description" content="Software engineer in Jakarta. Founding engineer at Pivy, building open source tools under nostacks.">
+  <meta property="og:url" content="https://hanebox.github.io/">
+  <meta property="og:image" content="https://hanebox.github.io/assets/avatar.webp">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://hanebox.github.io/">
+  <link rel="icon" href="assets/avatar.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e10;
+      --fg: #ededef;
+      --muted: #8b8b94;
+      --line: #1e1e23;
+      --accent: #ab9ff2;
+      color-scheme: dark;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background: var(--bg);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    ::selection { background: var(--accent); color: var(--bg); }
+
+    main {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 96px 20px 80px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: #3a3a42;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 150ms ease, text-decoration-color 150ms ease;
+    }
+
+    a:hover { color: var(--accent); text-decoration-color: currentColor; }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .muted { color: var(--muted); }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    h1 {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .location {
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .intro {
+      margin-top: 40px;
+      display: grid;
+      gap: 16px;
+      text-wrap: pretty;
+    }
+
+    .links {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+    }
+
+    section { margin-top: 64px; }
+
+    h2 {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .list {
+      list-style: none;
+      display: grid;
+      gap: 28px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0 16px;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    h3 .role { color: var(--muted); }
+
+    .date {
+      color: var(--muted);
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .desc {
+      margin-top: 4px;
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+
+    .arrow {
+      display: inline-block;
+      margin-left: 2px;
+      color: var(--muted);
+      transition: transform 150ms ease, color 150ms ease;
+    }
+
+    a:hover .arrow { color: inherit; transform: translate(1px, -1px); }
+
+    h3 a { text-decoration: none; }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      main { padding: 64px 16px 56px; }
+      section { margin-top: 56px; }
+      .row { flex-direction: column; gap: 2px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      a, .arrow { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img class="avatar" src="assets/avatar.webp" width="56" height="56" alt="Tengku Farhan">
+      <div>
+        <h1>Tengku Farhan <span class="muted">a.k.a. hanebox</span></h1>
+        <p class="muted">Software engineer</p>
+        <p class="muted location"><span aria-hidden="true">📍</span> Jakarta, Indonesia</p>
+      </div>
+    </header>
+
+    <div class="intro">
+      <p>I build for the web, and a lot of that work has been making slow things fast. Right now I'm a founding engineer at <a href="https://pivy.me">Pivy</a>.</p>
+      <p>On the side I make open source tools under <a href="https://github.com/nostacks">nostacks</a>. The best known is Ekphos, a Markdown tool for the terminal.</p>
+    </div>
+
+    <nav class="links" aria-label="Contact">
+      <a href="mailto:hihanebox@gmail.com">Email</a>
+      <a href="https://github.com/hanebox">GitHub</a>
+      <a href="https://www.linkedin.com/in/tengku-farhan/">LinkedIn</a>
+    </nav>
+
+    <section aria-labelledby="work">
+      <h2 id="work">Work</h2>
+      <ol class="list">
+        <li>
+          <div class="row">
+            <h3><a href="https://pivy.me">Pivy<span class="arrow" aria-hidden="true">↗</span></a> <span class="role">· Founding Engineer</span></h3>
+            <span class="date">Sep 2025 – Now</span>
+          </div>
+          <p class="desc">Leading engineering across the frontend and backend. Rewrote the entire product to a design engineering standard on rebuilt infrastructure, moved it from SPA to SSR, and achieved a 3x performance gain through off-thread processing, lazy loading, and asset compression.</p>
+        </li>
+        <li>
+          <div class="row">
+            <h3>ArctureLab <span class="role">· Senior Software Engineer</span></h3>
+            <span class="date">Mar – Sep 2025</span>
+          </div>
+          <p class="desc">Led the engineering team. Built landing pages for clients from construction to e-commerce, and moved older apps onto lighter stacks.</p>
+        </li>
+        <li>
+          <div class="row">
+            <h3>Engowl Studio <span class="role">· Software Engineer</span></h3>
+            <span class="date">Feb 2024 – Mar 2025</span>
+          </div>
+          <p class="desc">Built a blockchain indexer for a DeFi yield platform, wired smart contracts into client apps, and experimented with design engineering and visuals for the web.</p>
+        </li>
+        <li>
+          <div class="row">
+            <h3>Netra Music <span class="role">· Frontend Engineer</span></h3>
+            <span class="date">Feb 2023 – Jan 2024</span>
+          </div>
+          <p class="desc">Improved rendering performance on a 3D-heavy landing page by rewriting animations that caused CPU thrashing. Optimized the dashboard for large datasets with list virtualization and image preloading, and migrated the API client from REST to GraphQL.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="projects">
+      <h2 id="projects">Projects</h2>
+      <ul class="list">
+        <li>
+          <div class="row">
+            <h3><a href="https://github.com/nostacks/ekphos">Ekphos<span class="arrow" aria-hidden="true">↗</span></a></h3>
+            <span class="date">1k+ stars</span>
+          </div>
+          <p class="desc">A Markdown research tool for the terminal, written in Rust and inspired by Obsidian. It shows images inline in iTerm2, Kitty, and Sixel terminals, and installs from Cargo, Homebrew, or the AUR.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="stack">
+      <h2 id="stack">Stack</h2>
+      <p>TypeScript, Rust, Go, SQL</p>
+      <p class="muted">React, Fastify, Axum, Fiber</p>
+    </section>
+
+    <footer class="muted">
+      <p>Open to new work. Say hi at <a href="mailto:hihanebox@gmail.com">hihanebox@gmail.com</a>.</p>
+    </footer>
+  </main>
+</body>
+</html>
