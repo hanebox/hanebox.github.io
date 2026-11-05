@@ -76,17 +76,37 @@
     header {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
     }
 
     .avatar {
+      display: block;
       width: 56px;
       height: 56px;
       border-radius: 50%;
       object-fit: cover;
-      flex-shrink: 0;
       box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
     }
+
+    .avatar-fx {
+      position: absolute;
+      top: -52px;
+      left: -52px;
+      width: 160px;
+      height: 160px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 600ms ease;
+    }
+
+    .avatar-fx.is-ready { opacity: 1; }
 
     h1 {
       font-size: 17px;
@@ -189,7 +209,9 @@
 <body>
   <main>
     <header>
-      <img class="avatar" src="assets/avatar.webp" width="56" height="56" alt="Tengku Farhan">
+      <div class="avatar-wrap">
+        <img class="avatar" src="assets/avatar.webp" width="56" height="56" alt="Tengku Farhan">
+      </div>
       <div>
         <h1>Tengku Farhan <span class="muted">a.k.a. hanebox</span></h1>
         <p class="muted">Software engineer</p>
@@ -207,6 +229,19 @@
       <a href="https://github.com/hanebox">GitHub</a>
       <a href="https://www.linkedin.com/in/tengku-farhan/">LinkedIn</a>
     </nav>
+
+    <section aria-labelledby="projects">
+      <h2 id="projects">Projects</h2>
+      <ul class="list">
+        <li>
+          <div class="row">
+            <h3><a href="https://github.com/nostacks/ekphos">Ekphos<span class="arrow" aria-hidden="true">↗</span></a></h3>
+            <span class="date">1k+ stars</span>
+          </div>
+          <p class="desc">A Markdown research tool for the terminal, written in Rust and inspired by Obsidian. It shows images inline in iTerm2, Kitty, and Sixel terminals, and installs from Cargo, Homebrew, or the AUR.</p>
+        </li>
+      </ul>
+    </section>
 
     <section aria-labelledby="work">
       <h2 id="work">Work</h2>
@@ -242,19 +277,6 @@
       </ol>
     </section>
 
-    <section aria-labelledby="projects">
-      <h2 id="projects">Projects</h2>
-      <ul class="list">
-        <li>
-          <div class="row">
-            <h3><a href="https://github.com/nostacks/ekphos">Ekphos<span class="arrow" aria-hidden="true">↗</span></a></h3>
-            <span class="date">1k+ stars</span>
-          </div>
-          <p class="desc">A Markdown research tool for the terminal, written in Rust and inspired by Obsidian. It shows images inline in iTerm2, Kitty, and Sixel terminals, and installs from Cargo, Homebrew, or the AUR.</p>
-        </li>
-      </ul>
-    </section>
-
     <section aria-labelledby="stack">
       <h2 id="stack">Stack</h2>
       <p>TypeScript, Rust, Go, SQL</p>
@@ -265,5 +287,6 @@
       <p>Open to new work. Say hi at <a href="mailto:hihanebox@gmail.com">hihanebox@gmail.com</a>.</p>
     </footer>
   </main>
+  <script src="assets/avatar-fx.js" defer></script>
 </body>
 </html>
