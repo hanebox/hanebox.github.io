@@ -116,9 +116,20 @@
     }
 
     .location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
       font-size: 13px;
-      margin-top: 2px;
+      margin-top: 4px;
     }
+
+    .emoji {
+      flex-shrink: 0;
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+      line-height: 1;
+    }
+
+    h2 .emoji { font-size: 16px; }
 
     .intro {
       margin-top: 40px;
@@ -134,9 +145,18 @@
       gap: 8px 20px;
     }
 
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
     section { margin-top: 64px; }
 
     h2 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-size: 13px;
       font-weight: 500;
       color: var(--muted);
@@ -215,23 +235,24 @@
       <div>
         <h1>Tengku Farhan <span class="muted">a.k.a. hanebox</span></h1>
         <p class="muted">Software engineer</p>
-        <p class="muted location"><span aria-hidden="true">📍</span> Jakarta, Indonesia</p>
+        <p class="muted location"><span class="emoji" aria-hidden="true">📍</span>Jakarta, Indonesia</p>
       </div>
     </header>
 
     <div class="intro">
-      <p>I build for the web, and a lot of that work has been making slow things fast. Right now I'm a founding engineer at <a href="https://pivy.me">Pivy</a>.</p>
+      <p>I build for the web and native, and a lot of that work has been making slow things fast. Right now I'm a founding engineer at <a href="https://pivy.me">Pivy</a>.</p>
       <p>On the side I make open source tools under <a href="https://github.com/nostacks">nostacks</a>. The best known is Ekphos, a Markdown tool for the terminal.</p>
     </div>
 
     <nav class="links" aria-label="Contact">
-      <a href="mailto:hihanebox@gmail.com">Email</a>
-      <a href="https://github.com/hanebox">GitHub</a>
-      <a href="https://www.linkedin.com/in/tengku-farhan/">LinkedIn</a>
+      <a href="mailto:hihanebox@gmail.com"><span class="emoji" aria-hidden="true">✉️</span>Email</a>
+      <a href="https://github.com/hanebox"><span class="emoji" aria-hidden="true">🐙</span>GitHub</a>
+      <a href="https://www.linkedin.com/in/tengku-farhan/"><span class="emoji" aria-hidden="true">🤝</span>LinkedIn</a>
+      <a href="https://x.com/devhanebox"><span class="emoji" aria-hidden="true">💬</span>X</a>
     </nav>
 
     <section aria-labelledby="projects">
-      <h2 id="projects">Projects</h2>
+      <h2 id="projects"><span class="emoji" aria-hidden="true">📦</span>Projects</h2>
       <ul class="list">
         <li>
           <div class="row">
@@ -240,11 +261,17 @@
           </div>
           <p class="desc">A Markdown research tool for the terminal, written in Rust and inspired by Obsidian. It shows images inline in iTerm2, Kitty, and Sixel terminals, and installs from Cargo, Homebrew, or the AUR.</p>
         </li>
+        <li>
+          <div class="row">
+            <h3><a href="https://oth3rs.vercel.app/">oth3rs<span class="arrow" aria-hidden="true">↗</span></a></h3>
+          </div>
+          <p class="desc">A gallery of visual experiments where every piece is made by an LLM writing code and driving tools. No diffusion models, no image generators.</p>
+        </li>
       </ul>
     </section>
 
     <section aria-labelledby="work">
-      <h2 id="work">Work</h2>
+      <h2 id="work"><span class="emoji" aria-hidden="true">💼</span>Work</h2>
       <ol class="list">
         <li>
           <div class="row">
@@ -278,7 +305,7 @@
     </section>
 
     <section aria-labelledby="stack">
-      <h2 id="stack">Stack</h2>
+      <h2 id="stack"><span class="emoji" aria-hidden="true">🧰</span>Stack</h2>
       <p>TypeScript, Rust, Go, SQL</p>
       <p class="muted">React, Fastify, Axum, Fiber</p>
     </section>
